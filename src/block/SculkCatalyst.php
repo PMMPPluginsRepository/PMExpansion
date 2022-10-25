@@ -52,4 +52,6 @@ class SculkCatalyst extends Opaque implements IBlockState{
 		}
 		return parent::getXpDropForTool($item);
 	}
+
+	public function getLightLevel() : int{ return 6; }
 }
