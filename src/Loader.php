@@ -9,7 +9,7 @@ use pocketmine\scheduler\AsyncTask;
 use skh6075\pmexpansion\expansion\BlockExpansion;
 
 final class Loader extends PluginBase{
-	public const VERSION_TYPE = "Release";
+	public const VERSION_TYPE = "Development";
 
 	protected function onEnable() : void{
 		if(self::VERSION_TYPE === "Development"){
