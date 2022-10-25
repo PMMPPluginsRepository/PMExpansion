@@ -12,6 +12,7 @@ use pocketmine\utils\CloningRegistryTrait;
 
 /**
  * @method static Azalea AZALEA()
+ * @method static AzaleaLeaves AZALEA_LEAVES()
  */
 
 final class ExtraVanillaBlocks{
@@ -31,6 +32,9 @@ final class ExtraVanillaBlocks{
 
 	protected static function setup() : void{
 		$instantBreakInfo = BlockBreakInfo::instant();
-		self::register('azalea', new Azalea(new BID(Azalea::getFixedTypeId()), 'Azalea', new Info($instantBreakInfo)));
+
+		$azaleaInfo = new Info($instantBreakInfo);
+		self::register('azalea', new Azalea(new BID(Azalea::getFixedTypeId()), 'Azalea', $azaleaInfo));
+		self::register('azalea_leaves', new AzaleaLeaves(new BID(AzaleaLeaves::getFixedTypeId()), 'Azalea Leaves', $azaleaInfo));
 	}
 }

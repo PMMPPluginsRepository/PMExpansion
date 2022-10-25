@@ -20,6 +20,7 @@ use function str_replace;
 final class BlockExpansion implements IExpansion{
 	public static function synchronize() : void{
 		self::register(ExtraVanillaBlocks::AZALEA());
+		self::register(ExtraVanillaBlocks::AZALEA_LEAVES());
 	}
 
 	private static function register(
