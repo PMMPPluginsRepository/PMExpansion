@@ -48,7 +48,7 @@ final class ExtraVanillaBlocks{
 		self::register('azalea_leaves_flowered', new AzaleaLeavesFlowered(new BID(AzaleaLeavesFlowered::getFixedTypeId()), 'Azalea Leaves Flowered', $azaleaInfo));
 		self::register('flowering_azalea', new FloweringAzalea(new BID(FloweringAzalea::getFixedTypeId()), 'Flowering Azalea', $azaleaInfo));
 
-		self::register('target', new Target(new BID(Target::getFixedTypeId()), 'target', new Info($instantBreakInfo)));
+		self::register('target', new Target(new BID(Target::getFixedTypeId()), 'Target', new Info($instantBreakInfo)));
 
 		$sculkInfo = new Info(BlockBreakInfo::tier(3.0, BlockToolType::HOE, ToolTier::WOOD()));
 		self::register('sculk', new Sculk(new BID(Sculk::getFixedTypeId()), 'Sculk', $sculkInfo));
