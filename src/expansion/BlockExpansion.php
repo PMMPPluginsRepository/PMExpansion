@@ -22,6 +22,7 @@ final class BlockExpansion implements IExpansion{
 		self::register(ExtraVanillaBlocks::AZALEA());
 		self::register(ExtraVanillaBlocks::AZALEA_LEAVES());
 		self::register(ExtraVanillaBlocks::AZALEA_LEAVES_FLOWERED());
+		self::register(ExtraVanillaBlocks::FLOWERING_AZALEA());
 	}
 
 	private static function register(
