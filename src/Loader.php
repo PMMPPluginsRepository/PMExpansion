@@ -11,7 +11,7 @@ use skh6075\pmexpansion\expansion\EntityExpansion;
 use skh6075\pmexpansion\expansion\ItemExpansion;
 
 final class Loader extends PluginBase{
-	public const VERSION_TYPE = "Development";
+	public const VERSION_TYPE = "Release";
 
 	protected function onEnable() : void{
 		if(self::VERSION_TYPE === "Development"){
