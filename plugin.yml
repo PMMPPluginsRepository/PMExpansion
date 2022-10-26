@@ -1,7 +1,7 @@
 name: PMExpansion
 main: skh6075\pmexpansion\Loader
 author: skh6075
-version: 1.0.3
+version: 1.0.2
 api: 5.0.0
 
 src-namespace-prefix: skh6075\pmexpansion
