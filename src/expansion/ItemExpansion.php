@@ -21,7 +21,9 @@ use const pocketmine\BEDROCK_DATA_PATH;
 
 final class ItemExpansion implements IExpansion{
 	public static function synchronize() : void{
-		self::register(ExtraVanillaItems::ICE_BOMB());
+		foreach(ExtraVanillaItems::getAll() as $item){
+			self::register($item);
+		}
 	}
 
 	private static function register(

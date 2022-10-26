@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace skh6075\pmexpansion\block;
 
 use Closure;
+use pocketmine\block\BlockToolType;
 use pocketmine\block\Flowable;
 use pocketmine\data\bedrock\block\BlockStateNames;
 use pocketmine\data\bedrock\block\BlockTypeNames;
@@ -12,6 +13,8 @@ use pocketmine\data\bedrock\block\convert\BlockStateReader;
 use pocketmine\data\bedrock\block\convert\BlockStateWriter;
 use pocketmine\data\runtime\RuntimeDataReader;
 use pocketmine\data\runtime\RuntimeDataWriter;
+use pocketmine\item\Item;
+use pocketmine\item\VanillaItems;
 use skh6075\pmexpansion\block\utils\BlockTypeIdTrait;
 use skh6075\pmexpansion\block\utils\IBlockState;
 
@@ -52,5 +55,21 @@ class AzaleaLeavesFlowered extends Flowable implements IBlockState{
 	public function setUpdateBit(bool $state): self{
 		$this->updateBit = $state;
 		return $this;
+	}
+
+	public function getDropsForCompatibleTool(Item $item) : array{
+		if(($item->getBlockToolType() & BlockToolType::SHEARS) !== 0){
+			return parent::getDropsForCompatibleTool($item);
+		}
+
+		$drops = [];
+		if(random_int(1, 256) === 1){
+			$drops[] = ExtraVanillaBlocks::AZALEA()->asItem();
+		}
+		if(random_int(1, 50) === 1){
+			$drops[] = VanillaItems::STICK();
+		}
+
+		return $drops;
 	}
 }

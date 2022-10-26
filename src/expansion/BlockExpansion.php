@@ -19,10 +19,9 @@ use function str_replace;
 
 final class BlockExpansion implements IExpansion{
 	public static function synchronize() : void{
-		self::register(ExtraVanillaBlocks::AZALEA());
-		self::register(ExtraVanillaBlocks::AZALEA_LEAVES());
-		self::register(ExtraVanillaBlocks::AZALEA_LEAVES_FLOWERED());
-		self::register(ExtraVanillaBlocks::FLOWERING_AZALEA());
+		foreach(ExtraVanillaBlocks::getAll() as $block){
+			self::register($block);
+		}
 	}
 
 	private static function register(
