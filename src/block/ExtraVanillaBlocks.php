@@ -10,7 +10,6 @@ use pocketmine\block\BlockIdentifier as BID;
 use pocketmine\block\BlockToolType;
 use pocketmine\block\BlockTypeIds;
 use pocketmine\block\BlockTypeInfo as Info;
-use pocketmine\block\VanillaBlocks;
 use pocketmine\item\Item;
 use pocketmine\item\ToolTier;
 use pocketmine\utils\CloningRegistryTrait;
@@ -26,6 +25,8 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static SculkSensor SCULK_SENSOR()
  * @method static SculkShrieker SCULK_SHRIEKER()
  * @method static EndPortalFrame END_PORTAL_FRAME()
+ * @method static EndPortal END_PORTAL()
+ * @method static EndGateway END_GATEWAY()
  */
 
 final class ExtraVanillaBlocks{
@@ -67,6 +68,8 @@ final class ExtraVanillaBlocks{
 		self::register('sculk_shrieker', new SculkShrieker(new BID(SculkShrieker::getFixedTypeId()), 'Sculk Shrieker', $sculkInfo));
 
 		self::register('end_portal_frame', new EndPortalFrame(new BID(BlockTypeIds::END_PORTAL_FRAME), "End Portal Frame", $indestructibleInfo));
+		self::register('end_portal', new EndPortal(new BID(EndPortal::getFixedTypeId()), 'End Portal', $indestructibleInfo));
+		self::register('end_gateway', new EndGateway(new BID(EndGateway::getFixedTypeId()), 'End Gateway', $indestructibleInfo));
 
 		self::register('target', new Target(new BID(Target::getFixedTypeId()), 'Target', $instantBlockInfo));
 	}
