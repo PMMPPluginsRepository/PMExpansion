@@ -10,6 +10,7 @@ use pocketmine\utils\CloningRegistryTrait;
 
 /**
  * @method static IceBomb ICE_BOMB()
+ * @method static EnderEye ENDER_EYE()
  */
 
 final class ExtraVanillaItems{
@@ -29,5 +30,6 @@ final class ExtraVanillaItems{
 
 	protected static function setup() : void{
 		self::register('ice_bomb', new IceBomb(new IID(IceBomb::getFixedTypeId()), "Ice Bomb"));
+		self::register('ender_eye', new EnderEye(new IID(EnderEye::getFixedTypeId()), "Ender Eye"));
 	}
 }
