@@ -25,4 +25,8 @@ class IceBomb extends ProjectileItem{
 	public function getCooldownTicks() : int{
 		return 10;
 	}
+
+	public function getMaxStackSize() : int{
+		return 16;
+	}
 }
