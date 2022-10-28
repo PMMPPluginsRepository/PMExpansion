@@ -8,6 +8,7 @@ This plugin is a plug-in that adds features that are not **not implemented at al
 - [x] Azalea (Leaves, LeavesFlowered, FloweringAzalea)
 - [x] Sculk (Catalyst, Sensor, Shrieker)
 - [x] Target
+- [x] EndPortal (EndPortalFrame, EndPortal, EndGateway)
 
 ## Extended Items
 - [x] IceBomb
