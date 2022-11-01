@@ -29,6 +29,9 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static EndGateway END_GATEWAY()
  * @method static Moss MOSS()
  * @method static MossCarpet MOSS_CARPET()
+ * @method static Border BORDER()
+ * @method static Allow ALLOW()
+ * @method static Deny DENY()
  */
 
 final class ExtraVanillaBlocks{
@@ -77,5 +80,9 @@ final class ExtraVanillaBlocks{
 
 		self::register('moss', new Moss(new BID(Moss::getFixedTypeId()), 'Moss Block', $instantBlockInfo));
 		self::register('moss_carpet', new MossCarpet(new BID(MossCarpet::getFixedTypeId()), 'Moss Carpet', $instantBlockInfo));
+
+		self::register('border', new Border(new BID(Border::getFixedTypeId()), 'Border Block', $indestructibleInfo));
+		self::register('allow', new Allow(new BID(Allow::getFixedTypeId()), 'Allow', $indestructibleInfo));
+		self::register('deny', new Deny(new BID(Deny::getFixedTypeId()), 'Deny', $indestructibleInfo));
 	}
 }
