@@ -32,6 +32,9 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static Border BORDER()
  * @method static Allow ALLOW()
  * @method static Deny DENY()
+ * @method static CaveVines CAVE_VINES()
+ * @method static CaveVinesBodyWithBerries CAVE_VINES_BODY_WITH_BERRIES()
+ * @method static CaveVinesHeadWithBerries CAVE_VINES_HEAD_WITH_BERRIES()
  */
 
 final class ExtraVanillaBlocks{
@@ -84,5 +87,9 @@ final class ExtraVanillaBlocks{
 		self::register('border', new Border(new BID(Border::getFixedTypeId()), 'Border Block', $indestructibleInfo));
 		self::register('allow', new Allow(new BID(Allow::getFixedTypeId()), 'Allow', $indestructibleInfo));
 		self::register('deny', new Deny(new BID(Deny::getFixedTypeId()), 'Deny', $indestructibleInfo));
+
+		self::register('cave_vines', new CaveVines(new BID(CaveVines::getFixedTypeId()), 'Cave Vines', $instantBlockInfo));
+		self::register('cave_vines_body_with_berries', new CaveVinesBodyWithBerries(new BID(CaveVinesBodyWithBerries::getFixedTypeId()), 'Cave Vines Body With Berries', $instantBlockInfo));
+		self::register('cave_vines_head_with_berries', new CaveVinesHeadWithBerries(new BID(CaveVinesHeadWithBerries::getFixedTypeId()), 'Cave Vines Head With Berries', $instantBlockInfo));
 	}
 }
