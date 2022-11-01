@@ -30,8 +30,8 @@ class CaveVines extends BaseCaveVines{
 	}
 
 	public function getStateDeserialize() : ?Closure{
-		return static fn(BlockStateReader $in) : CaveVines => ExtraVanillaBlocks::CAVE_VINES()
-			->setAge($in->readBoundedInt(BlockStateNames::GROWING_PLANT_AGE, 0, self::MAX_AGE));
+		return fn(BlockStateReader $in) : CaveVines => ExtraVanillaBlocks::CAVE_VINES()
+			->setAge($in->readBoundedInt(BlockStateNames::GROWING_PLANT_AGE, 0, $this->getMaxAge()));
 	}
 
 	public function place(BlockTransaction $tx, Item $item, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, ?Player $player = null) : bool{
@@ -57,7 +57,7 @@ class CaveVines extends BaseCaveVines{
 	public function ticksRandomly() : bool{ return true; }
 
 	public function onRandomTick() : void{
-		if($this->age === self::MAX_AGE){
+		if($this->age === $this->getMaxAge()){
 			$this->grow();
 		}else{
 			++$this->age;

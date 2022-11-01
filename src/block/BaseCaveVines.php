@@ -9,27 +9,18 @@ use pocketmine\data\runtime\RuntimeDataReader;
 use pocketmine\data\runtime\RuntimeDataWriter;
 use pocketmine\item\Item;
 use pocketmine\math\Facing;
+use skh6075\pmexpansion\block\utils\BlockAgeTrait;
 use skh6075\pmexpansion\block\utils\IBlockState;
 
 abstract class BaseCaveVines extends Transparent implements IBlockState{
-	protected const MAX_AGE = 25;
-
-	protected int $age = 0;
+	use BlockAgeTrait;
 
 	public function getRequiredStateDataBits() : int{ return 5; }
 
+	protected function getMaxAge() : int{ return 25; }
+
 	protected function describeState(RuntimeDataWriter|RuntimeDataReader $w) : void{
-		$w->boundedInt(5, 0, self::MAX_AGE, $this->age);
-	}
-
-	public function getAge(): int{ return $this->age; }
-
-	public function setAge(int $age): self{
-		if($age < 0 || $age > self::MAX_AGE){
-			throw new \InvalidArgumentException("Age must be in range 0 ... " . self::MAX_AGE);
-		}
-		$this->age = $age;
-		return $this;
+		$w->boundedInt(5, 0, $this->getMaxAge(), $this->age);
 	}
 
 	public function onNearbyBlockChange() : void{
