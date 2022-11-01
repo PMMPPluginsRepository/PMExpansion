@@ -9,7 +9,7 @@ use pocketmine\item\Food;
 use skh6075\pmexpansion\block\ExtraVanillaBlocks;
 use skh6075\pmexpansion\item\utils\ItemTypeIdTrait;
 
-final class GlowBerries extends Food{
+class GlowBerries extends Food{
 	use ItemTypeIdTrait;
 
 	public function getFoodRestore() : int{ return 2; }
