@@ -18,6 +18,7 @@ use pocketmine\world\BlockTransaction;
 use skh6075\pmexpansion\block\utils\BlockTypeIdTrait;
 use skh6075\pmexpansion\block\utils\IBlockState;
 use skh6075\pmexpansion\world\generator\object\AzaleaTree;
+use skh6075\pmexpansion\world\particle\BoneMealParticle;
 
 class Azalea extends Transparent implements IBlockState{
 	use BlockTypeIdTrait;
@@ -42,6 +43,7 @@ class Azalea extends Transparent implements IBlockState{
 	public function onInteract(Item $item, int $face, Vector3 $clickVector, ?Player $player = null, array &$returnedItems = []) : bool{
 		if($item instanceof Fertilizer){
 			$this->grow();
+			$this->position->world->addParticle($this->position, new BoneMealParticle());
 
 			return true;
 		}

@@ -16,11 +16,10 @@ use pocketmine\item\Item;
 use pocketmine\math\Axis;
 use pocketmine\math\Facing;
 use pocketmine\math\Vector3;
-use pocketmine\network\mcpe\protocol\SpawnParticleEffectPacket;
-use pocketmine\network\mcpe\protocol\types\DimensionIds;
 use pocketmine\player\Player;
 use pocketmine\world\BlockTransaction;
 use skh6075\pmexpansion\block\utils\BlockTypeIdTrait;
+use skh6075\pmexpansion\world\particle\BoneMealParticle;
 
 class CaveVines extends BaseCaveVines{
 	use BlockTypeIdTrait;
@@ -46,13 +45,7 @@ class CaveVines extends BaseCaveVines{
 	public function onInteract(Item $item, int $face, Vector3 $clickVector, ?Player $player = null, array &$returnedItems = []) : bool{
 		if($item instanceof Fertilizer){
 			$this->grow();
-			$this->position->world->broadcastPacketToViewers($this->position, SpawnParticleEffectPacket::create(
-				dimensionId: DimensionIds::OVERWORLD,
-				actorUniqueId: -1,
-				position: $this->position->add(0.5, 0.5, 0.5),
-				particleName: "minecraft:crop_growth_emitter",
-				molangVariablesJson: ""
-			));
+			$this->position->world->addParticle($this->position, new BoneMealParticle());
 			$item->pop();
 
 			return true;
