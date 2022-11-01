@@ -6,7 +6,7 @@ namespace skh6075\pmexpansion\block;
 
 use Closure;
 use pocketmine\block\BlockToolType;
-use pocketmine\block\Flowable;
+use pocketmine\block\Transparent;
 use pocketmine\data\bedrock\block\BlockStateNames;
 use pocketmine\data\bedrock\block\BlockTypeNames;
 use pocketmine\data\bedrock\block\convert\BlockStateReader;
@@ -18,7 +18,7 @@ use pocketmine\item\VanillaItems;
 use skh6075\pmexpansion\block\utils\BlockTypeIdTrait;
 use skh6075\pmexpansion\block\utils\IBlockState;
 
-class AzaleaLeavesFlowered extends Flowable implements IBlockState{
+class AzaleaLeavesFlowered extends Transparent implements IBlockState{
 	use BlockTypeIdTrait;
 
 	private bool $persistentBit = false;

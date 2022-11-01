@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace skh6075\pmexpansion\sound\block;
+namespace skh6075\pmexpansion\world\sound\block;
 
 use pocketmine\math\Vector3;
 use pocketmine\network\mcpe\protocol\LevelSoundEventPacket;
