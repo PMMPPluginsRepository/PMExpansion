@@ -12,6 +12,7 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static IceBomb ICE_BOMB()
  * @method static EnderEye ENDER_EYE()
  * @method static GlowBerries GLOW_BERRIES()
+ * @method static Kelp KELP()
  */
 
 final class ExtraVanillaItems{
@@ -33,5 +34,6 @@ final class ExtraVanillaItems{
 		self::register('ice_bomb', new IceBomb(new IID(IceBomb::getFixedTypeId()), "Ice Bomb"));
 		self::register('ender_eye', new EnderEye(new IID(EnderEye::getFixedTypeId()), "Ender Eye"));
 		self::register('glow_berries', new GlowBerries(new IID(GlowBerries::getFixedTypeId()), "Glow Berries"));
+		self::register('kelp', new Kelp(new IID(Kelp::getFixedTypeId()), "Kelp"));
 	}
 }
