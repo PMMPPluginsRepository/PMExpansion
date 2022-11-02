@@ -52,14 +52,6 @@ class Kelp extends Transparent implements IBlockState{
 		$world = $this->position->getWorld();
 		if(!$this->canBeSupportedBy($this->getSide(Facing::DOWN))){
 			$world->useBreakOn($this->position);
-		}else{
-			foreach(Facing::HORIZONTAL as $side){
-				$b = $this->getSide($side);
-				if($b->isSolid()){
-					$world->useBreakOn($this->position);
-					break;
-				}
-			}
 		}
 	}
 
