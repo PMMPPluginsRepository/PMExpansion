@@ -9,6 +9,7 @@ use pocketmine\block\BlockBreakInfo;
 use pocketmine\block\BlockIdentifier as BID;
 use pocketmine\block\BlockToolType;
 use pocketmine\block\BlockTypeIds;
+use pocketmine\block\BlockTypeInfo;
 use pocketmine\block\BlockTypeInfo as Info;
 use pocketmine\item\Item;
 use pocketmine\item\ToolTier;
@@ -19,7 +20,6 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static AzaleaLeaves AZALEA_LEAVES()
  * @method static AzaleaLeavesFlowered AZALEA_LEAVES_FLOWERED()
  * @method static FloweringAzalea FLOWERING_AZALEA()
- * @method static Target TARGET()
  * @method static Sculk SCULK()
  * @method static SculkCatalyst SCULK_CATALYST()
  * @method static SculkSensor SCULK_SENSOR()
@@ -35,7 +35,9 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static CaveVines CAVE_VINES()
  * @method static CaveVinesBodyWithBerries CAVE_VINES_BODY_WITH_BERRIES()
  * @method static CaveVinesHeadWithBerries CAVE_VINES_HEAD_WITH_BERRIES()
+ * @method static Target TARGET()
  * @method static Kelp KELP()
+ * @method static Chain CHAIN()
  */
 
 final class ExtraVanillaBlocks{
@@ -80,8 +82,6 @@ final class ExtraVanillaBlocks{
 		self::register('end_portal', new EndPortal(new BID(EndPortal::getFixedTypeId()), 'End Portal', $indestructibleInfo));
 		self::register('end_gateway', new EndGateway(new BID(EndGateway::getFixedTypeId()), 'End Gateway', $indestructibleInfo));
 
-		self::register('target', new Target(new BID(Target::getFixedTypeId()), 'Target', $instantBlockInfo));
-
 		self::register('moss', new Moss(new BID(Moss::getFixedTypeId()), 'Moss Block', $instantBlockInfo));
 		self::register('moss_carpet', new MossCarpet(new BID(MossCarpet::getFixedTypeId()), 'Moss Carpet', $instantBlockInfo));
 
@@ -93,6 +93,8 @@ final class ExtraVanillaBlocks{
 		self::register('cave_vines_body_with_berries', new CaveVinesBodyWithBerries(new BID(CaveVinesBodyWithBerries::getFixedTypeId()), 'Cave Vines Body With Berries', $instantBlockInfo));
 		self::register('cave_vines_head_with_berries', new CaveVinesHeadWithBerries(new BID(CaveVinesHeadWithBerries::getFixedTypeId()), 'Cave Vines Head With Berries', $instantBlockInfo));
 
+		self::register('target', new Target(new BID(Target::getFixedTypeId()), 'Target', $instantBlockInfo));
 		self::register('kelp', new Kelp(new BID(Kelp::getFixedTypeId()), 'Kelp', $instantBlockInfo));
+		self::register('chain', new Chain(new BID(Chain::getFixedTypeId()), 'Chain', new BlockTypeInfo(new BlockBreakInfo(5.0, BlockToolType::PICKAXE, ToolTier::WOOD()->getHarvestLevel()))));
 	}
 }
