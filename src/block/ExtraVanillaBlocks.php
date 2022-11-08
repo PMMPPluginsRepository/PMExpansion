@@ -9,7 +9,6 @@ use pocketmine\block\BlockBreakInfo;
 use pocketmine\block\BlockIdentifier as BID;
 use pocketmine\block\BlockToolType;
 use pocketmine\block\BlockTypeIds;
-use pocketmine\block\BlockTypeInfo;
 use pocketmine\block\BlockTypeInfo as Info;
 use pocketmine\item\Item;
 use pocketmine\item\ToolTier;
@@ -95,6 +94,6 @@ final class ExtraVanillaBlocks{
 
 		self::register('target', new Target(new BID(Target::getFixedTypeId()), 'Target', $instantBlockInfo));
 		self::register('kelp', new Kelp(new BID(Kelp::getFixedTypeId()), 'Kelp', $instantBlockInfo));
-		self::register('chain', new Chain(new BID(Chain::getFixedTypeId()), 'Chain', new BlockTypeInfo(new BlockBreakInfo(5.0, BlockToolType::PICKAXE, ToolTier::WOOD()->getHarvestLevel()))));
+		self::register('chain', new Chain(new BID(Chain::getFixedTypeId()), 'Chain', new Info(new BlockBreakInfo(5.0, BlockToolType::PICKAXE, ToolTier::WOOD()->getHarvestLevel()))));
 	}
 }
