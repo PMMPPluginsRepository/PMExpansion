@@ -7,25 +7,31 @@ This plugin is a plug-in that adds features that are not **not implemented at al
 ## Extended Blocks
 - [x] Azalea (Leaves, LeavesFlowered, FloweringAzalea)
 - [x] Sculk (Catalyst, Sensor, Shrieker)
-- [x] Target
 - [x] EndPortal (EndPortalFrame, EndPortal, EndGateway)
 - [x] Moss (Carpet)
 - [x] Education (Allow, Deny, Border)
+- [x] CaveVines GlowBerries (Body, Head)
+- [x] Target
+- [x] Kelp
+- [x] Chain
 
 ## Extended Items
 - [x] IceBomb
 - [x] EnderEye (Eye of Ender)
+- [x] Camera
+- [x] GlowBerries
+- [x] Chain
+- [x] Kelp
 
 ## Extended Objects
 - [x] AzaleaTree
 
-## Realesed 1.0.3
-- Added Moss Block
-- Added Moss Carpet Block
-- Added Deny Block
-- Added Allow Block
-- Added Border Block
-- Added AzaleaTree object
-- Added Moss Block Fertilizer interaction
+## Released 1.0.4
+- Added CaveVines GlowBerries
+- Added CaveVines GlowBerries Growth
+- Added Chain
+- Added Kelp
+- Added Camera
+- Added BoneMealParticle
 
-![azaleaTree](https://user-images.githubusercontent.com/44698603/199234456-8ace9cad-c147-4917-8d91-cf8d6d83f781.png)
+![CaveVinesClowBerries](https://user-images.githubusercontent.com/44698603/200812360-4048c920-c463-47e0-8b60-e24a7bacf537.png)
