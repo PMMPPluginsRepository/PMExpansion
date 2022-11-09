@@ -39,6 +39,7 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static Chain CHAIN()
  * @method static Camera CAMERA()
  * @method static MangrovePropagule MANGROVE_PROPAGULE()
+ * @method static MangroveLeaves MANGROVE_LEAVES()
  */
 
 final class ExtraVanillaBlocks{
@@ -100,5 +101,6 @@ final class ExtraVanillaBlocks{
 		self::register('camera', new Camera(new BID(Camera::getFixedTypeId()), 'Camera', $instantBlockInfo));
 
 		self::register('mangrove_propagule', new MangrovePropagule(new BID(MangrovePropagule::getFixedTypeId()), 'Mangrove Propagule', $instantBlockInfo));
+		self::register('mangrove_leaves', new MangroveLeaves(new BID(MangroveLeaves::getFixedTypeId()), 'Mangrove Leaves', $leavesBreakInfo));
 	}
 }
