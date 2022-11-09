@@ -15,4 +15,6 @@ class Camera extends Item{
 	public function getBlock(?int $clickedFace = null) : Block{
 		return ExtraVanillaBlocks::CAMERA();
 	}
+
+	public function getMaxStackSize() : int{ return 1; }
 }
