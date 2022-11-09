@@ -14,6 +14,7 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static GlowBerries GLOW_BERRIES()
  * @method static Kelp KELP()
  * @method static Chain CHAIN()
+ * @method static Camera CAMERA()
  */
 
 final class ExtraVanillaItems{
@@ -37,5 +38,6 @@ final class ExtraVanillaItems{
 		self::register('glow_berries', new GlowBerries(new IID(GlowBerries::getFixedTypeId()), "Glow Berries"));
 		self::register('kelp', new Kelp(new IID(Kelp::getFixedTypeId()), "Kelp"));
 		self::register('chain', new Chain(new IID(Chain::getFixedTypeId()), 'Chain'));
+		self::register('camera', new Camera(new IID(Camera::getFixedTypeId()), 'Camera'));
 	}
 }

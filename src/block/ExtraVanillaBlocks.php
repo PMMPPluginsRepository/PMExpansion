@@ -37,6 +37,7 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static Target TARGET()
  * @method static Kelp KELP()
  * @method static Chain CHAIN()
+ * @method static Camera CAMERA()
  */
 
 final class ExtraVanillaBlocks{
@@ -95,5 +96,6 @@ final class ExtraVanillaBlocks{
 		self::register('target', new Target(new BID(Target::getFixedTypeId()), 'Target', $instantBlockInfo));
 		self::register('kelp', new Kelp(new BID(Kelp::getFixedTypeId()), 'Kelp', $instantBlockInfo));
 		self::register('chain', new Chain(new BID(Chain::getFixedTypeId()), 'Chain', new Info(new BlockBreakInfo(5.0, BlockToolType::PICKAXE, ToolTier::WOOD()->getHarvestLevel()))));
+		self::register('camera', new Camera(new BID(Camera::getFixedTypeId()), 'Camera', $instantBlockInfo));
 	}
 }
