@@ -12,6 +12,6 @@ namespace skh6075\pmexpansion\item;
 use pocketmine\item\Item;
 use skh6075\pmexpansion\item\utils\ItemTypeIdTrait;
 
-final class EnderEye extends Item{
+class EnderEye extends Item{
 	usE ItemTypeIdTrait;
 }
