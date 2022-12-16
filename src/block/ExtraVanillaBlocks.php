@@ -38,6 +38,9 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static Kelp KELP()
  * @method static Chain CHAIN()
  * @method static Camera CAMERA()
+ * @method static MangrovePropagule MANGROVE_PROPAGULE()
+ * @method static MangroveLeaves MANGROVE_LEAVES()
+ * @method static Honey HONEY_BLOCK()
  */
 
 final class ExtraVanillaBlocks{
@@ -97,5 +100,10 @@ final class ExtraVanillaBlocks{
 		self::register('kelp', new Kelp(new BID(Kelp::getFixedTypeId()), 'Kelp', $instantBlockInfo));
 		self::register('chain', new Chain(new BID(Chain::getFixedTypeId()), 'Chain', new Info(new BlockBreakInfo(5.0, BlockToolType::PICKAXE, ToolTier::WOOD()->getHarvestLevel()))));
 		self::register('camera', new Camera(new BID(Camera::getFixedTypeId()), 'Camera', $instantBlockInfo));
+
+		self::register('mangrove_propagule', new MangrovePropagule(new BID(MangrovePropagule::getFixedTypeId()), 'Mangrove Propagule', $instantBlockInfo));
+		self::register('mangrove_leaves', new MangroveLeaves(new BID(MangroveLeaves::getFixedTypeId()), 'Mangrove Leaves', $leavesBreakInfo));
+
+		self::register('honey_block', new Honey(new BID(Honey::getFixedTypeId()), "Honey Block", $instantBlockInfo));
 	}
 }
