@@ -10,6 +10,7 @@ use pocketmine\block\BlockIdentifier as BID;
 use pocketmine\block\BlockToolType;
 use pocketmine\block\BlockTypeIds;
 use pocketmine\block\BlockTypeInfo as Info;
+use pocketmine\block\BlockTypeTags;
 use pocketmine\item\Item;
 use pocketmine\item\ToolTier;
 use pocketmine\utils\CloningRegistryTrait;
@@ -85,7 +86,7 @@ final class ExtraVanillaBlocks{
 		self::register('end_portal', new EndPortal(new BID(EndPortal::getFixedTypeId()), 'End Portal', $indestructibleInfo));
 		self::register('end_gateway', new EndGateway(new BID(EndGateway::getFixedTypeId()), 'End Gateway', $indestructibleInfo));
 
-		self::register('moss', new Moss(new BID(Moss::getFixedTypeId()), 'Moss Block', $instantBlockInfo));
+		self::register('moss', new Moss(new BID(Moss::getFixedTypeId()), 'Moss Block', new Info(BlockBreakInfo::instant(), [BlockTypeTags::DIRT])));
 		self::register('moss_carpet', new MossCarpet(new BID(MossCarpet::getFixedTypeId()), 'Moss Carpet', $instantBlockInfo));
 
 		self::register('border', new Border(new BID(Border::getFixedTypeId()), 'Border Block', $indestructibleInfo));
