@@ -9,11 +9,14 @@ use pocketmine\block\BlockBreakInfo;
 use pocketmine\block\BlockIdentifier as BID;
 use pocketmine\block\BlockToolType;
 use pocketmine\block\BlockTypeIds;
+use pocketmine\block\BlockTypeInfo;
 use pocketmine\block\BlockTypeInfo as Info;
 use pocketmine\block\BlockTypeTags;
 use pocketmine\item\Item;
 use pocketmine\item\ToolTier;
 use pocketmine\utils\CloningRegistryTrait;
+use skh6075\pmexpansion\block\tile\RegularCampfireTile;
+use skh6075\pmexpansion\block\tile\SoulCampfireTile;
 
 /**
  * @method static Azalea AZALEA()
@@ -42,6 +45,8 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static MangrovePropagule MANGROVE_PROPAGULE()
  * @method static MangroveLeaves MANGROVE_LEAVES()
  * @method static Honey HONEY_BLOCK()
+ * @method static Campfire CAMPFIRE()
+ * @method static SoulCampfire SOUL_CAMPFIRE()
  */
 
 final class ExtraVanillaBlocks{
@@ -106,5 +111,9 @@ final class ExtraVanillaBlocks{
 		self::register('mangrove_leaves', new MangroveLeaves(new BID(MangroveLeaves::getFixedTypeId()), 'Mangrove Leaves', $leavesBreakInfo));
 
 		self::register('honey_block', new Honey(new BID(Honey::getFixedTypeId()), "Honey Block", $instantBlockInfo));
+
+		$campfireBreakInfo = new BlockTypeInfo(new BlockBreakInfo(2, BlockToolType::AXE));
+		self::register('campfire', new Campfire(new BID(BlockTypeIds::newId(), RegularCampfireTile::class), "Campfire", $campfireBreakInfo));
+		self::register('soul_campfire', new SoulCampfire(new BID(BlockTypeIds::newId(), SoulCampfireTile::class), "Soul Campfire", $campfireBreakInfo));
 	}
 }
