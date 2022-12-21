@@ -47,6 +47,7 @@ use skh6075\pmexpansion\block\tile\SoulCampfireTile;
  * @method static Honey HONEY_BLOCK()
  * @method static Campfire CAMPFIRE()
  * @method static SoulCampfire SOUL_CAMPFIRE()
+ * @method static Composter COMPOSTER()
  */
 
 final class ExtraVanillaBlocks{
@@ -115,5 +116,7 @@ final class ExtraVanillaBlocks{
 		$campfireBreakInfo = new BlockTypeInfo(new BlockBreakInfo(2, BlockToolType::AXE));
 		self::register('campfire', new Campfire(new BID(BlockTypeIds::newId(), RegularCampfireTile::class), "Campfire", $campfireBreakInfo));
 		self::register('soul_campfire', new SoulCampfire(new BID(BlockTypeIds::newId(), SoulCampfireTile::class), "Soul Campfire", $campfireBreakInfo));
+
+		self::register('composter', new Composter(new BID(Composter::getFixedTypeId()), 'Composter', new BlockTypeInfo(new BlockBreakInfo(0.6, BlockToolType::AXE))));
 	}
 }
