@@ -50,9 +50,9 @@ abstract class BaseCampfire extends Opaque implements IBlockState{
 
 	public function getRequiredStateDataBits() : int{ return 3; }
 
-	public function hasEntityCollision() : bool{
-		return true;
-	}
+	public function hasEntityCollision() : bool{ return true; }
+
+	public function isAffectedBySilkTouch() : bool{ return true; }
 
 	public function onInteract(Item $item, int $face, Vector3 $clickVector, ?Player $player = null, array &$returnedItems = []) : bool{
 		if(!$this->extinguish){
@@ -130,5 +130,9 @@ abstract class BaseCampfire extends Opaque implements IBlockState{
 		}
 
 		$this->position->getWorld()->scheduleDelayedBlockUpdate($this->position, 20);
+	}
+
+	public function getDropsForCompatibleTool(Item $item) : array{
+		return [VanillaItems::CHARCOAL()->setCount(4)];
 	}
 }

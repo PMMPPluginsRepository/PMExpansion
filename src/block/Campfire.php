@@ -9,6 +9,8 @@ use pocketmine\data\bedrock\block\BlockStateNames;
 use pocketmine\data\bedrock\block\BlockTypeNames;
 use pocketmine\data\bedrock\block\convert\BlockStateReader;
 use pocketmine\data\bedrock\block\convert\BlockStateWriter;
+use pocketmine\item\Item;
+use skh6075\pmexpansion\item\ExtraVanillaItems;
 
 class Campfire extends BaseCampfire{
 	public function getStateSerialize() : ?Closure{
@@ -21,5 +23,9 @@ class Campfire extends BaseCampfire{
 		return fn(BlockStateReader $in): Campfire => ExtraVanillaBlocks::CAMPFIRE()
 			->setFacing($in->readLegacyHorizontalFacing())
 			->setExtinguish($in->readBool(BlockStateNames::EXTINGUISHED));
+	}
+
+	public function asItem() : Item{
+		return ExtraVanillaItems::CAMPFIRE();
 	}
 }
