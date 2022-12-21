@@ -11,10 +11,12 @@ use pocketmine\block\utils\PillarRotationTrait;
 use pocketmine\data\bedrock\block\BlockTypeNames;
 use pocketmine\data\bedrock\block\convert\BlockStateReader;
 use pocketmine\data\bedrock\block\convert\BlockStateWriter;
+use pocketmine\item\Item;
 use pocketmine\math\AxisAlignedBB;
 use pocketmine\math\Facing;
 use skh6075\pmexpansion\block\utils\BlockTypeIdTrait;
 use skh6075\pmexpansion\block\utils\IBlockState;
+use skh6075\pmexpansion\item\ExtraVanillaItems;
 
 class Chain extends Transparent implements IBlockState{
 	use BlockTypeIdTrait;
@@ -32,5 +34,9 @@ class Chain extends Transparent implements IBlockState{
 
 	protected function recalculateCollisionBoxes() : array{
 		return [AxisAlignedBB::one()->trim($this->axis << 1, 0.3)->trim(Facing::opposite($this->axis << 1), 0.3)];
+	}
+
+	public function asItem() : Item{
+		return ExtraVanillaItems::CHAIN();
 	}
 }
