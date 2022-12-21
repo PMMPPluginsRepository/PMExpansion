@@ -88,10 +88,7 @@ abstract class BaseCampfire extends Opaque implements IBlockState{
 	}
 
 	public function onEntityInside(Entity $entity) : bool{
-		if(
-			!$this->extinguish ||
-			($entity instanceof Player && !$entity->hasFiniteResources()) || $entity->isOnFire()
-		){
+		if($this->extinguish || ($entity instanceof Player && !$entity->hasFiniteResources()) || $entity->isOnFire()){
 			return false;
 		}
 
@@ -102,7 +99,7 @@ abstract class BaseCampfire extends Opaque implements IBlockState{
 	}
 
 	public function onScheduledUpdate() : void{
-		if(!$this->extinguish){
+		if($this->extinguish){
 			return;
 		}
 
