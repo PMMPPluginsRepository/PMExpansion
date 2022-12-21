@@ -17,8 +17,8 @@ use pocketmine\block\EndPortalFrame as PMEndPortalFrame;
 use pocketmine\utils\AssumptionFailedError;
 use skh6075\pmexpansion\block\utils\IBlockState;
 use skh6075\pmexpansion\item\EnderEye;
-use skh6075\pmexpansion\world\sound\block\EndPortalFrameFillSound;
-use skh6075\pmexpansion\world\sound\block\EndPortalFrameSpawnSound;
+use skh6075\pmexpansion\world\sound\EndPortalFrameFillSound;
+use skh6075\pmexpansion\world\sound\EndPortalFrameSpawnSound;
 
 class EndPortalFrame extends PMEndPortalFrame implements IBlockState{
 

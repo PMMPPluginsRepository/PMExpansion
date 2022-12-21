@@ -14,7 +14,7 @@ use pocketmine\math\Vector3;
 use pocketmine\player\Player;
 use skh6075\pmexpansion\block\utils\BlockTypeIdTrait;
 use skh6075\pmexpansion\item\ExtraVanillaItems;
-use skh6075\pmexpansion\world\sound\block\CaveVinesPickBerriesSound;
+use skh6075\pmexpansion\world\sound\CaveVinesPickBerriesSound;
 
 class CaveVinesBodyWithBerries extends BaseCaveVines{
 	use BlockTypeIdTrait;
