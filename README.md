@@ -13,25 +13,27 @@ This plugin is a plug-in that adds features that are not **not implemented at al
 - [x] CaveVines GlowBerries (Body, Head)
 - [x] Target
 - [x] Kelp
-- [x] Chain
+- [x] CaveVines GlowBerries
+- [x] Camera
 
 ## Extended Items
 - [x] IceBomb
 - [x] EnderEye (Eye of Ender)
 - [x] Camera
 - [x] GlowBerries
-- [x] Chain
 - [x] Kelp
 
 ## Extended Objects
 - [x] AzaleaTree
 
-## Released 1.0.4
-- Added CaveVines GlowBerries
-- Added CaveVines GlowBerries Growth
-- Added Chain
-- Added Kelp
-- Added Camera
-- Added BoneMealParticle
+## Released 1.0.5
+**Blocks**
+- Added Honey Block
+- Added Campfire & Soul Campfire (Cooking interaction too)
+- Added Composter Block (Recycle interaction too)
 
-![CaveVinesClowBerries](https://user-images.githubusercontent.com/44698603/200812360-4048c920-c463-47e0-8b60-e24a7bacf537.png)
+**Refactor**
+- Move the sound path (world/sound/block -> world/sound)
+- The Chain block is implemented in core and is no longer supported by PMExpansion. [here](https://github.com/pmmp/PocketMine-MP/commit/b3473960b49f397f64ce6cbcc994bf413b2ab4ac)
+
+![Campfire](https://user-images.githubusercontent.com/44698603/209446243-26cfba0b-3d20-42d0-aea1-24e96eeb95f0.png)
