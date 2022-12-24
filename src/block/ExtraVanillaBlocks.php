@@ -9,10 +9,14 @@ use pocketmine\block\BlockBreakInfo;
 use pocketmine\block\BlockIdentifier as BID;
 use pocketmine\block\BlockToolType;
 use pocketmine\block\BlockTypeIds;
+use pocketmine\block\BlockTypeInfo;
 use pocketmine\block\BlockTypeInfo as Info;
+use pocketmine\block\BlockTypeTags;
 use pocketmine\item\Item;
 use pocketmine\item\ToolTier;
 use pocketmine\utils\CloningRegistryTrait;
+use skh6075\pmexpansion\block\tile\RegularCampfireTile;
+use skh6075\pmexpansion\block\tile\SoulCampfireTile;
 
 /**
  * @method static Azalea AZALEA()
@@ -36,11 +40,13 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static CaveVinesHeadWithBerries CAVE_VINES_HEAD_WITH_BERRIES()
  * @method static Target TARGET()
  * @method static Kelp KELP()
- * @method static Chain CHAIN()
  * @method static Camera CAMERA()
  * @method static MangrovePropagule MANGROVE_PROPAGULE()
  * @method static MangroveLeaves MANGROVE_LEAVES()
  * @method static Honey HONEY_BLOCK()
+ * @method static Campfire CAMPFIRE()
+ * @method static SoulCampfire SOUL_CAMPFIRE()
+ * @method static Composter COMPOSTER()
  */
 
 final class ExtraVanillaBlocks{
@@ -85,7 +91,7 @@ final class ExtraVanillaBlocks{
 		self::register('end_portal', new EndPortal(new BID(EndPortal::getFixedTypeId()), 'End Portal', $indestructibleInfo));
 		self::register('end_gateway', new EndGateway(new BID(EndGateway::getFixedTypeId()), 'End Gateway', $indestructibleInfo));
 
-		self::register('moss', new Moss(new BID(Moss::getFixedTypeId()), 'Moss Block', $instantBlockInfo));
+		self::register('moss', new Moss(new BID(Moss::getFixedTypeId()), 'Moss Block', new Info(BlockBreakInfo::instant(), [BlockTypeTags::DIRT])));
 		self::register('moss_carpet', new MossCarpet(new BID(MossCarpet::getFixedTypeId()), 'Moss Carpet', $instantBlockInfo));
 
 		self::register('border', new Border(new BID(Border::getFixedTypeId()), 'Border Block', $indestructibleInfo));
@@ -98,12 +104,17 @@ final class ExtraVanillaBlocks{
 
 		self::register('target', new Target(new BID(Target::getFixedTypeId()), 'Target', $instantBlockInfo));
 		self::register('kelp', new Kelp(new BID(Kelp::getFixedTypeId()), 'Kelp', $instantBlockInfo));
-		self::register('chain', new Chain(new BID(Chain::getFixedTypeId()), 'Chain', new Info(new BlockBreakInfo(5.0, BlockToolType::PICKAXE, ToolTier::WOOD()->getHarvestLevel()))));
 		self::register('camera', new Camera(new BID(Camera::getFixedTypeId()), 'Camera', $instantBlockInfo));
 
 		self::register('mangrove_propagule', new MangrovePropagule(new BID(MangrovePropagule::getFixedTypeId()), 'Mangrove Propagule', $instantBlockInfo));
 		self::register('mangrove_leaves', new MangroveLeaves(new BID(MangroveLeaves::getFixedTypeId()), 'Mangrove Leaves', $leavesBreakInfo));
 
 		self::register('honey_block', new Honey(new BID(Honey::getFixedTypeId()), "Honey Block", $instantBlockInfo));
+
+		$campfireBreakInfo = new BlockTypeInfo(new BlockBreakInfo(2, BlockToolType::AXE));
+		self::register('campfire', new Campfire(new BID(BlockTypeIds::newId(), RegularCampfireTile::class), "Campfire", $campfireBreakInfo));
+		self::register('soul_campfire', new SoulCampfire(new BID(BlockTypeIds::newId(), SoulCampfireTile::class), "Soul Campfire", $campfireBreakInfo));
+
+		self::register('composter', new Composter(new BID(Composter::getFixedTypeId()), 'Composter', new BlockTypeInfo(new BlockBreakInfo(0.6, BlockToolType::AXE))));
 	}
 }

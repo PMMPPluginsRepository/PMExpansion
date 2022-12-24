@@ -9,10 +9,10 @@ use pocketmine\item\Item;
 use skh6075\pmexpansion\block\ExtraVanillaBlocks;
 use skh6075\pmexpansion\item\utils\ItemTypeIdTrait;
 
-class Chain extends Item{
+class SoulCampfire extends Item{
 	use ItemTypeIdTrait;
 
 	public function getBlock(?int $clickedFace = null) : Block{
-		return ExtraVanillaBlocks::CHAIN();
+		return ExtraVanillaBlocks::SOUL_CAMPFIRE();
 	}
 }

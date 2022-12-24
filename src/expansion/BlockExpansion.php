@@ -7,12 +7,15 @@ namespace skh6075\pmexpansion\expansion;
 use Closure;
 use pocketmine\block\Block;
 use pocketmine\block\BlockFactory;
+use pocketmine\block\tile\TileFactory;
 use pocketmine\data\bedrock\block\convert\BlockObjectToStateSerializer;
 use pocketmine\data\bedrock\block\convert\BlockStateToObjectDeserializer;
 use pocketmine\data\bedrock\block\convert\BlockStateWriter;
 use pocketmine\item\StringToItemParser;
 use pocketmine\world\format\io\GlobalBlockStateHandlers;
 use skh6075\pmexpansion\block\ExtraVanillaBlocks;
+use skh6075\pmexpansion\block\tile\RegularCampfireTile;
+use skh6075\pmexpansion\block\tile\SoulCampfireTile;
 use skh6075\pmexpansion\block\utils\IBlockState;
 use function strtolower;
 use function str_replace;
@@ -22,6 +25,11 @@ final class BlockExpansion implements IExpansion{
 		foreach(ExtraVanillaBlocks::getAll() as $block){
 			self::register($block);
 		}
+
+		/** @var TileFactory $tileFactory */
+		$tileFactory = TileFactory::getInstance();
+		$tileFactory->register(RegularCampfireTile::class, ["Campfire", "minecraft:campfire"]);
+		$tileFactory->register(SoulCampfireTile::class, ["SoulCampfire", "minecraft:soul_campfire"]);
 	}
 
 	private static function register(

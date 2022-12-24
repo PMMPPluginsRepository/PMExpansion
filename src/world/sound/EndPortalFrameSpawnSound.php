@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace skh6075\pmexpansion\world\sound\block;
+namespace skh6075\pmexpansion\world\sound;
 
 use pocketmine\math\Vector3;
 use pocketmine\network\mcpe\protocol\LevelSoundEventPacket;
 use pocketmine\network\mcpe\protocol\types\LevelSoundEvent;
 use pocketmine\world\sound\Sound;
 
-final class EndPortalFrameFillSound implements Sound{
+final class EndPortalFrameSpawnSound implements Sound{
 	public function encode(Vector3 $pos) : array{
-		return [LevelSoundEventPacket::nonActorSound(LevelSoundEvent::BLOCK_END_PORTAL_FRAME_FILL, $pos, false)];
+		return [LevelSoundEventPacket::nonActorSound(LevelSoundEvent::BLOCK_END_PORTAL_SPAWN, $pos, false)];
 	}
 }
