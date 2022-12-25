@@ -26,7 +26,7 @@ class CaveVinesBodyWithBerries extends BaseCaveVines{
 
 	public function getStateDeserialize() : ?Closure{
 		return static fn(BlockStateReader $in) : CaveVinesBodyWithBerries => ExtraVanillaBlocks::CAVE_VINES_BODY_WITH_BERRIES()
-			->setAge($in->readBoundedInt(BlockStateNames::GROWING_PLANT_AGE, 0, self::MAX_AGE));
+			->setAge($in->readBoundedInt(BlockStateNames::GROWING_PLANT_AGE, 0, $this->getMaxAge()));
 	}
 
 	public function onInteract(Item $item, int $face, Vector3 $clickVector, ?Player $player = null, array &$returnedItems = []) : bool{
