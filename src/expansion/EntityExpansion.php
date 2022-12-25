@@ -18,7 +18,7 @@ final class EntityExpansion implements IExpansion{
 	public static function synchronize() : void{
 		self::register(IceBomb::class, function(World $world, CompoundTag $nbt): IceBomb{
 			return new IceBomb(EntityDataHelper::parseLocation($nbt, $world), null, $nbt);
-		}, ["IceBomb", EntityIds::ICE_BOMB], EntityLegacyIds::ICE_BOMB);
+		}, ["IceBomb", EntityIds::ICE_BOMB]);
 	}
 
 	private static function register(
