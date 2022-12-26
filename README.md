@@ -2,7 +2,7 @@
 A plugin that make the PocketMine-MP environment similar to vanilla.
 
 # Extended System
-This plugin is a plug-in that adds features that are not **not implemented at all** in **PocketMine-MP** software.
+This plugin is a plugin that adds features that are not **not implemented at all** in **PocketMine-MP** software.
 
 ## Extended Blocks
 - [x] Azalea (Leaves, LeavesFlowered, FloweringAzalea)
