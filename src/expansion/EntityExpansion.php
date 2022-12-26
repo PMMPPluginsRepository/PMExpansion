@@ -24,12 +24,11 @@ final class EntityExpansion implements IExpansion{
 	private static function register(
 		string $entityClass,
 		Closure $closure,
-		string|array $savedEntityNames,
-		?int $legacyEntityId = null
+		string|array $savedEntityNames
 	): void{
 		if(!is_array($savedEntityNames)){
 			$savedEntityNames = [$savedEntityNames];
 		}
-		EntityFactory::getInstance()->register($entityClass, $closure, $savedEntityNames, $legacyEntityId);
+		EntityFactory::getInstance()->register($entityClass, $closure, $savedEntityNames);
 	}
 }
