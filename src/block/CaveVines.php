@@ -80,7 +80,6 @@ class CaveVines extends BaseCaveVines{
 
 	private function isVinesHead(): bool{
 		$down = $this->getSide(Facing::DOWN);
-		return !$down->isSameType($this)
-			&& !$down->isSameType(ExtraVanillaBlocks::CAVE_VINES_HEAD_WITH_BERRIES());
+		return !$down->isSameType($this) && !$down->isSameType(ExtraVanillaBlocks::CAVE_VINES_HEAD_WITH_BERRIES());
 	}
 }
